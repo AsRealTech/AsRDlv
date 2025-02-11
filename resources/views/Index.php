@@ -1,0 +1,1 @@
+<?PHP header("location: ".$_SERVER['REQUEST_URI']); ?>
