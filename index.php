@@ -11,7 +11,7 @@ $route = new route();
 
 switch ($baseRoute){
     case"/home":
-    $route->view('verify');
+    $route->view('home');
     break;
     case"/track":
     $route->view('trackin');
