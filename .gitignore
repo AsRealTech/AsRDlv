@@ -1,3 +1,4 @@
-app/
+app/core/
+app/http/model/
 vendor/
 MailHog_windows_amd64.exe
