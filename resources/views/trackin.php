@@ -1,21 +1,17 @@
-<?php 
-include __DIR__ . "/layout/header.php";
-?>
-    
-    
-       
-   
-<main class="bg-white"> 
+<?php include __DIR__ . "/layout/header.php";?>
+
+<!-- starts -->
+    <main class="bg-white"> 
         <nav class="bg-[#11172b] p-0">
             <section class="lg:px-[10%] px-[2%] flex justify-between items-center ">
                 <aside class="flex lg:space-x-4 space-x-2"><a href="/" style="color:red">MILITARY CHECK<!--img alt="Logo" loading="lazy" width="250" height="200" decoding="async" data-nimg="1" class="cursor-pointer hover:scale-105 transition duration-200 ease-out transform lg:w-[250px] lg:h-[100px] w-[150px] h-[70px] object-contain " style="color:transparent"
                          src="Airlines.png" --></a></aside>
                 <aside class="flex-col relative hidden lg:flex">
-                    <section class="relative" hidden>
+                    <section class="relative">
                         <ul class="flex space-x-4 justify-end text-white">
                             <li class="text-white text-sm cursor-pointer flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                                 <span
-                                    class="text-xs">English - United States $</span>
+                                    class="text-xs">English -  $</span>
                             </li>
                             <li class="text-white text-sm cursor-pointer flex space-x-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
                                 <span
@@ -59,59 +55,40 @@ include __DIR__ . "/layout/header.php";
         <div class="lg:px-[10%] px-[2%]" >
             <section class="mt-8">
                 <div class="flex space-x-8 items-center">
-                    <h1 class="text-black lg:text-4xl font-bold">Details</h1><span class="text-gray-500">All past and present</span></div>
+                    <h1 class="text-black lg:text-4xl font-bold">INPUT ID NUMBER</h1><span class="text-gray-500">All past and present</span></div>
             </section>
+            <div class="mt-10 block " >
+                <section class="border-2 border-[#11172b]">
+                    <div class="bg-[#11172b] text-white p-4 flex items-center">Find Record</div>
+                   <div class="alert danger"></div>
+
+                    <form class="p-4" method="POST">
+                        <div class="">
+                            <label for="staffId" class="text-sm text-black"> ID NUMBER</label>
+                            <input  type="text" id="saffId" class="w-full border-2 rounded-md p-2 text-black" name="staffId" required/>
+                        </div>
+                        <div class=" mt-6 ">
+                            <input type="submit" name="submit" class="bg-[#11172b] text-white p-4 rounded-md flex items-center text-black" value="ID VERIFY">
+                        </div>
+                    </form>
+                </section>
+   <section class="mt-10" id="faq" >
+                    <em class="text-blacktext-4xl" style="color: Orange;">DISCLAIMER</em><br/>
+                    <p style="color: black;">This military security ID card is the property of the issuing authority and is intended for official use only. Unauthorized use, reproduction, or alteration of this card is strictly prohibited. Verification of this ID card is required for access to secure areas. In case of loss or theft, report immediately to the appropriate authorities.</p><p style="color: black;"> This card remains the property of the military and must be surrendered upon request.</p>
+                     
+ </section>
+        </div>
        
-         <?php 
-$vv = 6;
-if($vv == 6){
-  //  header("location: /");
-} else {
-    $r_fetch = $_SESSION['staff_user']; 
-
-
-echo "
-<div class='mt-6 ' id='perR2332'>
-<div class=''>
-<div class='bg-white p-4 rounded-lg shadow-md'>
-<div class='text-center'><img alt='Profile Image' loading='lazy' width='128' height='128' decoding='async' data-nimg='1' class='w-60 h-80 object-cover mx-auto' style='color:transparent'
-        src='id/" . $r_fetch['EmployeeID'] . ".jpeg' />
-    <h1 class='text-3xl font-bold my-4'>" . $r_fetch['FullName'] . "</h1>
-</div>
-<div class=''>
-    <div class='bg-white p-6 rounded-lg shadow-md text-black'>
-        <h2 class='text-xl font-bold mb-2'>Personal Information:</h2>
-        <p>   Full Name:       " .  $r_fetch['FullName']  . " </p>
-        <p>   Contact Details:       " . $r_fetch['ContactDetails']  . "</p>
-        <p>   Address:        " . $r_fetch['Address']  . " </p>
-        <p>   Date of Birth:    " .  $r_fetch['dob']  . " </p>
-        <h2 class='text-xl font-bold mt-8 mb-2'>Deployment Information:</h2>
-        <p>   Current Status:       " . $r_fetch['job'] . " </p>
-        <p>   ID Number:       " .  $r_fetch['EmployeeID']   . "</p>
-        <p>   Reporting Officer:        " . $r_fetch['ReportingManager']  . " </p>
-        <p>   Deployment:        " . $r_fetch['workLocation']  . " </p>
-        <h2 class='text-xl font-bold mt-8 mb-2'>Current Rank :</h2>
-        <p>   Educational Qualifications:        " . $r_fetch['Educational']  . " </p>
-        <p>   Certifications:       " . $r_fetch['Certifications']   . "</p>
-        <p>   Current Rank:        " . $r_fetch['TrainingCertifications']   . "</p>
-        <h2 class='text-xl font-bold mt-8 mb-2'>Security Clearance and Background Check Information:</h2>
-        <p>   Security Clearance Level:        " . $r_fetch['SecurityClearanceLevel']    . " </p>
-        <p>   Background Check:        " . $r_fetch['BackgroundCheck']   . "</p>
-        <h2 class='text-xl font-bold mt-8 mb-2'>Additional Information:</h2>
-        <p>   Language Proficiency:       " . $r_fetch['Language']   . " </p>
-        <p>   Additional Skills:        " . $r_fetch['Skills']     . " </p>
-        <p>   Specialized Training:        " . $r_fetch['SpecializedTraining']  . " </p>
-    </div>
-</div>
-</div>
-</div>
-</div>
-";
-
-        } ?>
+        <?php 
+     //   search_funtion();
+         ?>
         </div>
     </main>
     
-    <?php include __DIR__ . "/layout/footer.php";?>
+    
+    
+ <?php include __DIR__ . "/layout/footer.php";?>
+    
+    
     
     
